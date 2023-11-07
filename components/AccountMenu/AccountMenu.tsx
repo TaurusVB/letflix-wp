@@ -29,7 +29,7 @@ const AccountMenu: FC<IAccountMenuProps> = ({ visible }) => {
           onClick={() => signOut()}
           className=" px-3 text-center text-white text-sm hover:underline"
         >
-          Sign out of Netflix
+          Sign out of Letflix
         </div>
       </div>
     </div>
