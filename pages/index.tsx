@@ -11,20 +11,21 @@ import InfoModal from "@/components/InfoModal";
 import useInfoModal from "@/hooks/useInfoModal";
 
 export async function getServerSideProps(context: NextPageContext) {
-  const session = await getSession(context);
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/auth",
-        permanent: false,
-      },
-    };
+  try {
+    const session = await getSession(context);
+    if (!session) {
+      return {
+        redirect: {
+          destination: "/auth",
+          permanent: false,
+        },
+      };
+    }
+    return { props: {} };
+  } catch (error) {
+    console.error("Error getting session:", error);
+    return { props: {} };
   }
-
-  return {
-    props: {},
-  };
 }
 
 export default function Home() {
