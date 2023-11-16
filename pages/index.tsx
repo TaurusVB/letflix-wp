@@ -9,6 +9,7 @@ import InfoModal from "@/components/InfoModal";
 import useMovieList from "@/hooks/useMovieList";
 import useFavorites from "@/hooks/useFavorites";
 import useInfoModal from "@/hooks/useInfoModal";
+import Head from "next/head";
 
 export async function getServerSideProps(context: NextPageContext) {
   const session = await getSession(context);
@@ -34,6 +35,11 @@ const Home = () => {
 
   return (
     <>
+      <Head>
+        <title>Letflix</title>
+        <meta name="description" content="Letflix, Home page" />
+      </Head>
+
       <InfoModal visible={isOpen} onClose={closeModal} />
       <Navbar />
       <Billboard />
