@@ -1,38 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Letflix - Netflix Clone
 
-## Getting Started
+Welcome to the Letflix repository! Letflix is a streaming service application, a Netflix clone, designed to provide users with a personalized and interactive movie-watching experience. With user authentication and the ability to select an account, Letflix offers a curated list of available movies for users to enjoy. Additionally, users can add movies to their watchlist for later viewing.
 
-First, run the development server:
+<div align="left">
+  <img height="400" src="https://res.cloudinary.com/dvlinx4rz/image/upload/v1700224005/Letflix-clone-wp_bq1vkk.png"  />
+</div>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+###
+
+## Features
+
+- **User Authentication:** Users can sign in using their GitHub or Google accounts.
+- **Account Selection:** Choose the account that suits your preferences.
+- **Browse Movies:** Explore a diverse collection of movies available for streaming.
+- **Watchlist:** Add movies to your watchlist for future viewing.
+- **Responsive Design:** Enjoy Letflix on various devices with a responsive and user-friendly interface.
+  
+ ## Technologies Used
+
+- React
+- Tailwind CSS
+- Next.js
+- Prisma
+- MongoDB
+- NextAuth
+- Vercel
+
+## Installation and Setup
+
+### Cloning the repository
+
+```shell
+git clone https://github.com/TaurusVB/letflix-wp
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install packages
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```shell
+npm i
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Setup .env file
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```js
+DATABASE_URL=
+NEXTAUTH_JWT_SECRET=
+NEXTAUTH_SECRET=
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+GITHUB_ID=
+GITHUB_SECRET=
 
-## Learn More
+GOOGLE_CLIENT_ID=
+GOOGLE_CLIENT_SECRET=
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Start the app
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```shell
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## About the Project
 
-## Deploy on Vercel
+This project was created with the guidance of a [YouTube video](https://www.youtube.com/watch?v=mqUN4N2q4qY&list=LL&index=4&t=5523s&ab_channel=CodeWithAntonio). provided by CodeWithAntonio. I am grateful to CodeWithAntonio and other educational resources that have taught me how to develop software and use various technologies.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+I always value opportunities for learning and skill improvement, and I hope that this project will be beneficial for others who also wish to learn software development.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Thank you for your support and education!
