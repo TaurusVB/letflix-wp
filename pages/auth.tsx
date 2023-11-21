@@ -10,23 +10,24 @@ import Head from "next/head";
 import axios from "axios";
 
 import Input from "@/components/Input";
+import { authOptions } from "./api/auth/[...nextauth]";
+import { getServerSession } from "next-auth";
 
 export async function getServerSideProps(context: NextPageContext) {
-  try {
-    const session = await getSession(context);
-    if (session) {
-      return {
-        redirect: {
-          destination: '/',
-          permanent: false,
-        },
-      };
-    }
-    return { props: {} };
-  } catch (error) {
-    console.error('Error getting session:', error);
-    return { props: {} };
+  const session = await getServerSession(context.req, context.res, authOptions);
+
+  if (session) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
   }
+
+  return {
+    props: {},
+  };
 }
 
 const Auth = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import { NextPageContext } from "next";
-import { getSession } from "next-auth/react";
+import { getServerSession } from "next-auth/next";
 
 import Navbar from "@/components/Navbar";
 import Billboard from "@/components/Billboard";
@@ -10,23 +10,23 @@ import useMovieList from "@/hooks/useMovieList";
 import useFavorites from "@/hooks/useFavorites";
 import useInfoModal from "@/hooks/useInfoModal";
 import Head from "next/head";
+import { authOptions } from "./api/auth/[...nextauth]";
 
 export async function getServerSideProps(context: NextPageContext) {
-  try {
-    const session = await getSession(context);
-    if (!session) {
-      return {
-        redirect: {
-          destination: "/auth",
-          permanent: false,
-        },
-      };
-    }
-    return { props: {} };
-  } catch (error) {
-    console.error("Error getting session:", error);
-    return { props: {} };
+  const session = await getServerSession(context.req, context.res, authOptions);
+
+  if (!session) {
+    return {
+      redirect: {
+        destination: "/auth",
+        permanent: false,
+      },
+    };
   }
+
+  return {
+    props: {},
+  };
 }
 
 const Home = () => {
