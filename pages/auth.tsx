@@ -2,8 +2,8 @@ import { useCallback, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
 
-import { NextPageContext } from "next";
-import { getSession, signIn } from "next-auth/react";
+import { GetServerSidePropsContext } from "next";
+import { signIn } from "next-auth/react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 
@@ -13,7 +13,7 @@ import Input from "@/components/Input";
 import { authOptions } from "./api/auth/[...nextauth]";
 import { getServerSession } from "next-auth";
 
-export async function getServerSideProps(context: NextPageContext) {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getServerSession(context.req, context.res, authOptions);
 
   if (session) {

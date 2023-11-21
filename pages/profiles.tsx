@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-import { NextPageContext } from "next";
+import { GetServerSidePropsContext } from "next";
 import { getServerSession } from "next-auth/next";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -8,7 +8,7 @@ import Head from "next/head";
 import useCurrentUser from "@/hooks/useCurrentUser";
 import { authOptions } from "./api/auth/[...nextauth]";
 
-export async function getServerSideProps(context: NextPageContext) {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getServerSession(context.req, context.res, authOptions);
 
   if (!session) {

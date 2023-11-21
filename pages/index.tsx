@@ -1,5 +1,5 @@
 import React from "react";
-import { NextPageContext } from "next";
+import { GetServerSidePropsContext } from "next";
 import { getServerSession } from "next-auth/next";
 
 import Navbar from "@/components/Navbar";
@@ -12,7 +12,7 @@ import useInfoModal from "@/hooks/useInfoModal";
 import Head from "next/head";
 import { authOptions } from "./api/auth/[...nextauth]";
 
-export async function getServerSideProps(context: NextPageContext) {
+export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getServerSession(context.req, context.res, authOptions);
 
   if (!session) {
