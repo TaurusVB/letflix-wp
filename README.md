@@ -60,10 +60,3 @@ GOOGLE_CLIENT_SECRET=
 npm run dev
 ```
 
-## About the Project
-
-This project was created with the guidance of a [YouTube video](https://www.youtube.com/watch?v=mqUN4N2q4qY&list=LL&index=4&t=5523s&ab_channel=CodeWithAntonio). provided by CodeWithAntonio. I am grateful to CodeWithAntonio and other educational resources that have taught me how to develop software and use various technologies.
-
-I always value opportunities for learning and skill improvement, and I hope that this project will be beneficial for others who also wish to learn software development.
-
-Thank you for your support and education!
